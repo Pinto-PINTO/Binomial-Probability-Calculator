@@ -50,6 +50,16 @@ def binomial_lesser_than(x):
 
 ################### User Input ###############
 
+print("-----------------------------------------------------------------")
+print("Binomial Distribution Calculator                 by: MENUKA PINTO")
+print("-----------------------------------------------------------------")
+print("-----------------------------------------------------------------")
+print("N = Number of opportunities an event X occur")
+print("x = Number of times that event x occurs or is stipulated to occur")
+print("p = Probability of success")
+print("-----------------------------------------------------------------")
+print("")
+
 N = input("N : ")
 x = input("x : ")
 p = input("p : ")
