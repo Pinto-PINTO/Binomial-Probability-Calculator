@@ -1,7 +1,7 @@
 
 import math
 
-# P ( X = x)
+# P ( X = x )
 def binomial_equal(N,x,p):
 
     q = 1 - float(p)
@@ -22,7 +22,7 @@ def binomial_equal(N,x,p):
     return Result
 
     
-# P ( X > = x)
+# P ( X > = x )
 def binomial_greater_than(N,x):
     
     prob_greater_total = 0
@@ -35,6 +35,19 @@ def binomial_greater_than(N,x):
     return prob_greater_total
 
 
+# P (X < = x)
+def binomial_lesser_than(x):
+
+    prob_lesser_total = 0
+
+    for val in range (0, int(x_increment)):
+        
+        G = binomial_equal(N,val,p)
+        prob_lesser_total += float(G)
+
+    return prob_lesser_total
+
+
 ################### User Input ###############
 
 N = input("N : ")
@@ -42,12 +55,14 @@ x = input("x : ")
 p = input("p : ")
 
 N_increment = int(N) + 1
+x_increment = int(x) + 1
 
 ##############################################
 
 
 BE = binomial_equal(N,x,p)
 BG = binomial_greater_than(N,x)
+BL = binomial_lesser_than(x)
 
 
 print("")
@@ -55,7 +70,7 @@ print("P(X =  "  + str(x) + ")  = ", BE)
 print("")
 print("P(X >= " + str(x) +  ")  = ", BG)
 print("")
-print("P(X <  "  + str(x) + ")  = ", 1 - BG)
+print("P(X <= " + str(x) +  ")  = ", BL)
 print("")
 
 
