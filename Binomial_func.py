@@ -1,7 +1,7 @@
 
 import math
 
-
+# P ( X = x)
 def binomial_equal(N,x,p):
 
     q = 1 - float(p)
@@ -22,24 +22,24 @@ def binomial_equal(N,x,p):
     return Result
 
     
-
+# P ( X > = x)
 def binomial_greater_than(N,x):
     
     prob_greater_total = 0
 
-    for val in range (int(x),int(N_increment)):  # 2,3,4,5,6
+    for val in range (int(x),int(N_increment)): 
 
-        r_r = binomial_equal(N,val,p)
-        prob_greater_total += float(r_r)        
+        F = binomial_equal(N,val,p)
+        prob_greater_total += float(F)        
 
     return prob_greater_total
 
 
-###############################################
+################### User Input ###############
+
 N = input("N : ")
 x = input("x : ")
 p = input("p : ")
-
 
 N_increment = int(N) + 1
 
